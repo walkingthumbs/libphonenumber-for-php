@@ -2,7 +2,7 @@
 return array (
   'generalDesc' => 
   array (
-    'NationalNumberPattern' => '[24-7]\\d{7}',
+    'NationalNumberPattern' => '[2-57-9]\\d{7}',
     'PossibleNumberPattern' => '\\d{8}',
     'ExampleNumber' => '',
   ),
@@ -10,42 +10,24 @@ return array (
   array (
     'NationalNumberPattern' => '
           (?:
-            20(?:
-              49|
-              5[23]|
-              9[016-9]
-            )|
-            40(?:
-              4[56]|
-              5[4-6]|
-              7[0179]
-            )|
-            50[34]\\d
-          )\\d{4}
+            3[012]|
+            7\\d|
+            81
+          )\\d{6}
         ',
     'PossibleNumberPattern' => '\\d{8}',
-    'ExampleNumber' => '20491234',
+    'ExampleNumber' => '71234567',
   ),
   'mobile' => 
   array (
     'NationalNumberPattern' => '
           (?:
-            6(?:
-              [056]\\d|
-              1[0-367]|
-              8[0-3]|
-              90
-            )|
-            7(?:
-              [02-68]\\d|
-              1[0-4689]|
-              7[0-69]|
-              9[0-689]
-            )
-          )\\d{5}
+            [259]\\d|
+            4[0-2]
+          )\\d{6}
         ',
     'PossibleNumberPattern' => '\\d{8}',
-    'ExampleNumber' => '70123456',
+    'ExampleNumber' => '20123456',
   ),
   'tollFree' => 
   array (
@@ -55,9 +37,9 @@ return array (
   ),
   'premiumRate' => 
   array (
-    'NationalNumberPattern' => 'NA',
-    'PossibleNumberPattern' => 'NA',
-    'ExampleNumber' => '',
+    'NationalNumberPattern' => '8[028]\\d{6}',
+    'PossibleNumberPattern' => '\\d{8}',
+    'ExampleNumber' => '80123456',
   ),
   'sharedCost' => 
   array (
@@ -71,16 +53,16 @@ return array (
     'PossibleNumberPattern' => 'NA',
     'ExampleNumber' => '',
   ),
-  'id' => 'BF',
-  'countryCode' => 226,
+  'id' => 'TN',
+  'countryCode' => 216,
   'internationalPrefix' => '00',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' => 
   array (
     0 => 
     array (
-      'pattern' => '(\\d{2})(\\d{2})(\\d{2})(\\d{2})',
-      'format' => '$1 $2 $3 $4',
+      'pattern' => '(\\d{2})(\\d{3})(\\d{3})',
+      'format' => '$1 $2 $3',
       'leadingDigitsPatterns' => 
       array (
       ),

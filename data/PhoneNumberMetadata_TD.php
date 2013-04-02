@@ -2,39 +2,36 @@
 return array (
   'generalDesc' => 
   array (
-    'NationalNumberPattern' => '[23]\\d{8}',
-    'PossibleNumberPattern' => '\\d{7,9}',
+    'NationalNumberPattern' => '[2679]\\d{7}',
+    'PossibleNumberPattern' => '\\d{8}',
     'ExampleNumber' => '',
   ),
   'fixedLine' => 
   array (
     'NationalNumberPattern' => '
-          2(?:
-            0(?:
-              (?:
-                2\\d|
-                4[47]|
-                5[3467]|
-                6[279]|
-                8[268]|
-                9[245]
-              )\\d|
-              7(?:
-                2[29]|
-                [35]\\d
-              )
-            )|
-            210\\d
+          22(?:
+            [3789]0|
+            5[0-5]|
+            6[89]
           )\\d{4}
         ',
-    'PossibleNumberPattern' => '\\d{7,9}',
-    'ExampleNumber' => '202123456',
+    'PossibleNumberPattern' => '\\d{8}',
+    'ExampleNumber' => '22501234',
   ),
   'mobile' => 
   array (
-    'NationalNumberPattern' => '3[02-4]\\d{7}',
-    'PossibleNumberPattern' => '\\d{9}',
-    'ExampleNumber' => '301234567',
+    'NationalNumberPattern' => '
+          (?:
+            6[02368]\\d|
+            77\\d|
+            9(?:
+              5[0-4]|
+              9\\d
+            )
+          )\\d{5}
+        ',
+    'PossibleNumberPattern' => '\\d{8}',
+    'ExampleNumber' => '63012345',
   ),
   'tollFree' => 
   array (
@@ -60,22 +57,21 @@ return array (
     'PossibleNumberPattern' => 'NA',
     'ExampleNumber' => '',
   ),
-  'id' => 'MG',
-  'countryCode' => 261,
-  'internationalPrefix' => '00',
-  'nationalPrefix' => '0',
-  'nationalPrefixForParsing' => '0',
+  'id' => 'TD',
+  'countryCode' => 235,
+  'internationalPrefix' => '00|16',
+  'preferredInternationalPrefix' => '00',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' => 
   array (
     0 => 
     array (
-      'pattern' => '([23]\\d)(\\d{2})(\\d{3})(\\d{2})',
+      'pattern' => '(\\d{2})(\\d{2})(\\d{2})(\\d{2})',
       'format' => '$1 $2 $3 $4',
       'leadingDigitsPatterns' => 
       array (
       ),
-      'nationalPrefixFormattingRule' => '0$1',
+      'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',
     ),
   ),

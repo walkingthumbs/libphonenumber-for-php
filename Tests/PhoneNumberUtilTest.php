@@ -37,6 +37,7 @@ require_once dirname(__FILE__) . '/../ValidationResult.php';
 class PhoneNumberUtilTest extends \PHPUnit_Framework_TestCase {
 
 	private static $bsNumber = NULL;
+	private static $bsMobile = NULL;
 	private static $internationalTollFree = NULL;
 	private static $sgNumber = NULL;
 	private static $usShortByOneNumber = NULL;
@@ -77,6 +78,8 @@ class PhoneNumberUtilTest extends \PHPUnit_Framework_TestCase {
 	private static function initializePhoneUtilForTesting() {
 		self::$bsNumber = new PhoneNumber();
 		self::$bsNumber->setCountryCode(1)->setNationalNumber(2423651234);
+		self::$bsMobile = new PhoneNumber();
+		self::$bsMobile->setCountryCode(1)->setNationalNumber(2423570000);
 		self::$internationalTollFree = new PhoneNumber();
 		self::$internationalTollFree->setCountryCode(800)->setNationalNumber(12345678);
 		self::$sgNumber = new PhoneNumber();
@@ -877,6 +880,83 @@ class PhoneNumberUtilTest extends \PHPUnit_Framework_TestCase {
 			$this->phoneUtil->parseAndKeepRawInput("0011 16502530000", RegionCode::AU);
 		$this->assertEquals("0011 1 650 253 0000", $this->phoneUtil->formatInOriginalFormat($outOfCountryNumberFromAU2, RegionCode::AU));
 
+	}
+
+	public function testIsPremiumRate() {
+		$this->assertEquals(PhoneNumberType::PREMIUM_RATE, $this->phoneUtil->getNumberType(self::$usPremium));
+
+		$premiumRateNumber = new PhoneNumber();
+		$premiumRateNumber->setCountryCode(39)->setNationalNumber(892123);
+		$this->assertEquals(PhoneNumberType::PREMIUM_RATE,
+			$this->phoneUtil->getNumberType($premiumRateNumber));
+
+		$premiumRateNumber->clear();
+		$premiumRateNumber->setCountryCode(44)->setNationalNumber(9187654321);
+		$this->assertEquals(PhoneNumberType::PREMIUM_RATE,
+			$this->phoneUtil->getNumberType($premiumRateNumber));
+
+		$premiumRateNumber->clear();
+		$premiumRateNumber->setCountryCode(49)->setNationalNumber(9001654321);
+		$this->assertEquals(PhoneNumberType::PREMIUM_RATE,
+			$this->phoneUtil->getNumberType($premiumRateNumber));
+
+		$premiumRateNumber->clear();
+		$premiumRateNumber->setCountryCode(49)->setNationalNumber(90091234567);
+		$this->assertEquals(PhoneNumberType::PREMIUM_RATE,
+			$this->phoneUtil->getNumberType($premiumRateNumber));
+	}
+
+	public function testIsTollFree() {
+		$tollFreeNumber = new PhoneNumber();
+
+		$tollFreeNumber->setCountryCode(1)->setNationalNumber(8881234567);
+		$this->assertEquals(PhoneNumberType::TOLL_FREE,
+			$this->phoneUtil->getNumberType($tollFreeNumber));
+
+		$tollFreeNumber->clear();
+		$tollFreeNumber->setCountryCode(39)->setNationalNumber(803123);
+		$this->assertEquals(PhoneNumberType::TOLL_FREE,
+			$this->phoneUtil->getNumberType($tollFreeNumber));
+
+		$tollFreeNumber->clear();
+		$tollFreeNumber->setCountryCode(44)->setNationalNumber(8012345678);
+		$this->assertEquals(PhoneNumberType::TOLL_FREE,
+			$this->phoneUtil->getNumberType($tollFreeNumber));
+
+		$tollFreeNumber->clear();
+		$tollFreeNumber->setCountryCode(49)->setNationalNumber(8001234567);
+		$this->assertEquals(PhoneNumberType::TOLL_FREE,
+			$this->phoneUtil->getNumberType($tollFreeNumber));
+
+		$this->assertEquals(PhoneNumberType::TOLL_FREE,
+			$this->phoneUtil->getNumberType(self::$internationalTollFree));
+	}
+
+	public function testIsMobile() {
+		$this->assertEquals(PhoneNumberType::MOBILE, $this->phoneUtil->getNumberType(self::$bsMobile));
+		$this->assertEquals(PhoneNumberType::MOBILE, $this->phoneUtil->getNumberType(self::$gbMobile));
+		$this->assertEquals(PhoneNumberType::MOBILE, $this->phoneUtil->getNumberType(self::$itMobile));
+		$this->assertEquals(PhoneNumberType::MOBILE, $this->phoneUtil->getNumberType(self::$arMobile));
+
+		$mobileNumber = new PhoneNumber();
+		$mobileNumber->setCountryCode(49)->setNationalNumber(15123456789);
+		$this->assertEquals(PhoneNumberType::MOBILE, $this->phoneUtil->getNumberType($mobileNumber));
+	}
+
+	public function testIsFixedLine() {
+		$this->assertEquals(PhoneNumberType::FIXED_LINE, $this->phoneUtil->getNumberType(self::$bsNumber));
+		$this->assertEquals(PhoneNumberType::FIXED_LINE, $this->phoneUtil->getNumberType(self::$itNumber));
+		$this->assertEquals(PhoneNumberType::FIXED_LINE, $this->phoneUtil->getNumberType(self::$gbNumber));
+		$this->assertEquals(PhoneNumberType::FIXED_LINE, $this->phoneUtil->getNumberType(self::$deNumber));
+	}
+
+	public function testIsFixedLineAndMobile() {
+		$this->assertEquals(PhoneNumberType::FIXED_LINE_OR_MOBILE, $this->phoneUtil->getNumberType(self::$usNumber));
+
+		$fixedLineAndMobileNumber = new PhoneNumber();
+		$fixedLineAndMobileNumber->setCountryCode(54)->setNationalNumber(1987654321);
+		$this->assertEquals(PhoneNumberType::FIXED_LINE_OR_MOBILE,
+			$this->phoneUtil->getNumberType($fixedLineAndMobileNumber));
 	}
 
 	/**
