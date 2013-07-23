@@ -28,6 +28,13 @@ class PhoneNumberUtilProductionTest extends \PHPUnit_Framework_TestCase
         $this->phoneUtil = PhoneNumberUtil::getInstance();
     }
 
+    public function testSpecialCaseGermanMobile() {
+        $mobileNumber = new PhoneNumber();
+        $mobileNumber->setCountryCode(49)->setNationalNumber(1512345678);
+        $this->assertEquals(PhoneNumberType::MOBILE,
+            $this->phoneUtil->getNumberType($mobileNumber));
+    }
+
     public function testSpecialCaseIndianMobile() {
         $fixedLineAndMobileNumber = new PhoneNumber();
         $fixedLineAndMobileNumber->setCountryCode(91)->setNationalNumber(7290412345);
