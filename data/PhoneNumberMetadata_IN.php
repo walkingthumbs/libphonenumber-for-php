@@ -273,7 +273,8 @@ return array (
               )
             )|
             9\\d{3}
-          )\\d{6}
+          )\\d{6}|
+          72904\\d{5}
         ',
     'PossibleNumberPattern' => '\\d{10}',
     'ExampleNumber' => '9123456789',
