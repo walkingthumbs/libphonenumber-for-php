@@ -63,7 +63,7 @@ return array (
     ),
     1 => 
     array (
-      'pattern' => '(\\d{2})(\\d{4,9})',
+      'pattern' => '(\\d{2})(\\d{4,11})',
       'format' => '$1/$2',
       'leadingDigitsPatterns' => 
       array (
