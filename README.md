@@ -1,3 +1,4 @@
+[![Travis Build](https://travis-ci.org/practo/libphonenumber-for-php.png)](https://travis-ci.org/practo/libphonenumber-for-php)
 # What is it?
 PHP library for parsing, formatting, storing and validating international phone numbers.
 
