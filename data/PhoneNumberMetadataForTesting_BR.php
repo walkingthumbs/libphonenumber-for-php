@@ -44,9 +44,7 @@ return array (
   ),
   'id' => 'BR',
   'countryCode' => 55,
-  'internationalPrefix' => '0014',
-  'nationalPrefix' => '0',
-  'nationalPrefixForParsing' => '0',
+  'internationalPrefix' => '',
   'sameMobileAndFixedLinePattern' => true,
   'numberFormat' =>
   array (

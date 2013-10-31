@@ -40,7 +40,7 @@ return array (
   'mobile' =>
   array (
     'NationalNumberPattern' => '
-          38[59]\\d{6}|
+          38[589]\\d{6}|
           (?:
             6(?:
               1[0-8]|

@@ -3,10 +3,14 @@ return array (
   'generalDesc' =>
   array (
     'NationalNumberPattern' => '
-          [1-7]\\d{7,11}|
+          1(?:
+            00\\d{2}|
+            \\d{6,11}
+          )|
+          [2-7]\\d{6,11}|
           8[0-357-9]\\d{6,9}|
           9(?:
-            5\\d{3}|
+            5\\d{3,4}|
             \\d{9}
           )
         ',
@@ -16,7 +20,11 @@ return array (
   'fixedLine' =>
   array (
     'NationalNumberPattern' => '
-          21\\d{8,10}|
+          21(?:
+            100\\d{2}|
+            95\\d{3,4}|
+            \\d{8,10}
+          )|
           (?:
             10|
             2[02-57-9]|
@@ -46,7 +54,11 @@ return array (
               71|
               98
             )
-          )\\d{8}|
+          )(?:
+            100\\d{2}|
+            95\\d{3,4}|
+            \\d{8}
+          )|
           (?:
             3(?:
               1[02-9]|
@@ -105,7 +117,11 @@ return array (
               4[13]|
               5[1-5]
             )
-          )\\d{7}|
+          )(?:
+            100\\d{2}|
+            95\\d{3,4}|
+            \\d{7}
+          )|
           80(?:
             29|
             6[03578]|
@@ -148,21 +164,22 @@ return array (
   array (
     'NationalNumberPattern' => '
           400\\d{7}|
-          95\\d{3}
+          95\\d{3,4}
         ',
-    'PossibleNumberPattern' => '\\d{5}(?:\\d{5})?',
+    'PossibleNumberPattern' => '\\d{5,10}',
     'ExampleNumber' => '4001234567',
   ),
   'noInternationalDialling' =>
   array (
     'NationalNumberPattern' => '
+          100\\d{2}|
           (?:
             4|
             (?:
               10
             )?8
           )00\\d{7}|
-          95\\d{3}
+          95\\d{3,4}
         ',
     'PossibleNumberPattern' => '\\d{5,12}',
     'ExampleNumber' => '4001234567',
@@ -200,16 +217,71 @@ return array (
     ),
     2 =>
     array (
-      'pattern' => '(\\d{5})',
+      'pattern' => '(\\d{5,6})',
       'format' => '$1',
       'leadingDigitsPatterns' =>
       array (
-        0 => '95',
+        0 => '
+            100|
+            95
+          ',
       ),
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',
     ),
     3 =>
+    array (
+      'pattern' => '(\\d{2})(\\d{5,6})',
+      'format' => '$1 $2',
+      'leadingDigitsPatterns' =>
+      array (
+        0 => '
+            (?:
+              10|
+              2\\d
+            )[19]
+          ',
+        1 => '
+            (?:
+              10|
+              2\\d
+            )(?:
+              10|
+              95
+            )
+          ',
+        2 => '
+            (?:
+              10|
+              2\\d
+            )(?:
+              100|
+              95
+            )
+          ',
+      ),
+      'nationalPrefixFormattingRule' => '0$1',
+      'domesticCarrierCodeFormattingRule' => '$CC $1',
+    ),
+    4 =>
+    array (
+      'pattern' => '(\\d{3})(\\d{5,6})',
+      'format' => '$1 $2',
+      'leadingDigitsPatterns' =>
+      array (
+        0 => '[3-9]',
+        1 => '[3-9]\\d{2}[19]',
+        2 => '
+            [3-9]\\d{2}(?:
+              10|
+              95
+            )
+          ',
+      ),
+      'nationalPrefixFormattingRule' => '0$1',
+      'domesticCarrierCodeFormattingRule' => '$CC $1',
+    ),
+    5 =>
     array (
       'pattern' => '(\\d{3,4})(\\d{4})',
       'format' => '$1 $2',
@@ -220,7 +292,7 @@ return array (
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',
     ),
-    4 =>
+    6 =>
     array (
       'pattern' => '(21)(\\d{4})(\\d{4,6})',
       'format' => '$1 $2 $3',
@@ -231,7 +303,7 @@ return array (
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '$CC $1',
     ),
-    5 =>
+    7 =>
     array (
       'pattern' => '([12]\\d)(\\d{4})(\\d{4})',
       'format' => '$1 $2 $3',
@@ -259,7 +331,7 @@ return array (
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '$CC $1',
     ),
-    6 =>
+    8 =>
     array (
       'pattern' => '(\\d{3})(\\d{4})(\\d{4})',
       'format' => '$1 $2 $3',
@@ -297,7 +369,7 @@ return array (
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '$CC $1',
     ),
-    7 =>
+    9 =>
     array (
       'pattern' => '(\\d{3})(\\d{3})(\\d{4})',
       'format' => '$1 $2 $3',
@@ -363,7 +435,7 @@ return array (
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '$CC $1',
     ),
-    8 =>
+    10 =>
     array (
       'pattern' => '(1[3-58]\\d)(\\d{4})(\\d{4})',
       'format' => '$1 $2 $3',
@@ -374,7 +446,7 @@ return array (
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '$CC $1',
     ),
-    9 =>
+    11 =>
     array (
       'pattern' => '(10800)(\\d{3})(\\d{4})',
       'format' => '$1 $2 $3',
@@ -410,14 +482,53 @@ return array (
     ),
     2 =>
     array (
-      'pattern' => '(\\d{5})',
-      'format' => '$1',
+      'pattern' => '(\\d{2})(\\d{5,6})',
+      'format' => '$1 $2',
       'leadingDigitsPatterns' =>
       array (
-        0 => '95',
+        0 => '
+            (?:
+              10|
+              2\\d
+            )[19]
+          ',
+        1 => '
+            (?:
+              10|
+              2\\d
+            )(?:
+              10|
+              95
+            )
+          ',
+        2 => '
+            (?:
+              10|
+              2\\d
+            )(?:
+              100|
+              95
+            )
+          ',
       ),
     ),
     3 =>
+    array (
+      'pattern' => '(\\d{3})(\\d{5,6})',
+      'format' => '$1 $2',
+      'leadingDigitsPatterns' =>
+      array (
+        0 => '[3-9]',
+        1 => '[3-9]\\d{2}[19]',
+        2 => '
+            [3-9]\\d{2}(?:
+              10|
+              95
+            )
+          ',
+      ),
+    ),
+    4 =>
     array (
       'pattern' => '(21)(\\d{4})(\\d{4,6})',
       'format' => '$1 $2 $3',
@@ -426,7 +537,7 @@ return array (
         0 => '21',
       ),
     ),
-    4 =>
+    5 =>
     array (
       'pattern' => '([12]\\d)(\\d{4})(\\d{4})',
       'format' => '$1 $2 $3',
@@ -452,7 +563,7 @@ return array (
           ',
       ),
     ),
-    5 =>
+    6 =>
     array (
       'pattern' => '(\\d{3})(\\d{4})(\\d{4})',
       'format' => '$1 $2 $3',
@@ -488,7 +599,7 @@ return array (
           ',
       ),
     ),
-    6 =>
+    7 =>
     array (
       'pattern' => '(\\d{3})(\\d{3})(\\d{4})',
       'format' => '$1 $2 $3',
@@ -552,7 +663,7 @@ return array (
           ',
       ),
     ),
-    7 =>
+    8 =>
     array (
       'pattern' => '(1[3-58]\\d)(\\d{4})(\\d{4})',
       'format' => '$1 $2 $3',
@@ -561,7 +672,7 @@ return array (
         0 => '1[3-58]',
       ),
     ),
-    8 =>
+    9 =>
     array (
       'pattern' => '(10800)(\\d{3})(\\d{4})',
       'format' => '$1 $2 $3',

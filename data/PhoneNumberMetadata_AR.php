@@ -394,6 +394,20 @@ return array (
       'nationalPrefixFormattingRule' => '0$1',
       'domesticCarrierCodeFormattingRule' => '',
     ),
+    9 =>
+    array (
+      'pattern' => '(\\d{3})',
+      'format' => '$1',
+      'leadingDigitsPatterns' =>
+      array (
+        0 => '
+            1[012]|
+            911
+          ',
+      ),
+      'nationalPrefixFormattingRule' => '$1',
+      'domesticCarrierCodeFormattingRule' => '',
+    ),
   ),
   'intlNumberFormat' =>
   array (
@@ -484,7 +498,7 @@ return array (
     3 =>
     array (
       'pattern' => '(9)(\\d{4})(\\d{3})(\\d{3})',
-      'format' => '$2 15-$3-$4',
+      'format' => '$1 $2 $3-$4',
       'leadingDigitsPatterns' =>
       array (
         0 => '93[58]',

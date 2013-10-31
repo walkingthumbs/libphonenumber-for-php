@@ -108,7 +108,7 @@ return array (
   'internationalPrefix' => '810',
   'preferredInternationalPrefix' => '8~10',
   'nationalPrefix' => '8',
-  'nationalPrefixForParsing' => '80?',
+  'nationalPrefixForParsing' => '8?0?',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' =>
   array (

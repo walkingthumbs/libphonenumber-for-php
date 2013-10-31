@@ -62,7 +62,7 @@ return array (
   'countryCode' => 58,
   'internationalPrefix' => '00',
   'nationalPrefix' => '0',
-  'nationalPrefixForParsing' => '(1\\d{2})|0',
+  'nationalPrefixForParsing' => '0',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' =>
   array (

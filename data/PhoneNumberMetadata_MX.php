@@ -318,5 +318,5 @@ return array (
     ),
   ),
   'mainCountryForCode' => NULL,
-  'leadingZeroPossible' => NULL,
+  'leadingZeroPossible' => true,
 );

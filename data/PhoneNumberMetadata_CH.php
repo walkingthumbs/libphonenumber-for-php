@@ -16,7 +16,7 @@ return array (
             2[12467]|
             3[1-4]|
             4[134]|
-            5[12568]|
+            5[256]|
             6[12]|
             [7-9]1
           )\\d{7}
@@ -26,9 +26,9 @@ return array (
   ),
   'mobile' =>
   array (
-    'NationalNumberPattern' => '7[46-9]\\d{7}',
+    'NationalNumberPattern' => '7[5-9]\\d{7}',
     'PossibleNumberPattern' => '\\d{9}',
-    'ExampleNumber' => '741234567',
+    'ExampleNumber' => '781234567',
   ),
   'tollFree' =>
   array (

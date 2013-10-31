@@ -1070,8 +1070,8 @@ class PhoneNumberUtilTest extends \PHPUnit_Framework_TestCase {
 
 		// Test national number bigger than max 32-bit signed integer
 		$inNumber = new PhoneNumber();
-		$inNumber->setCountryCode(55)->setNationalNumber(9876543210);
-		$this->assertEquals($inNumber, $this->phoneUtil->parse("9876543210", RegionCode::BR));
+		$inNumber->setCountryCode(65)->setNationalNumber(9876543210);
+		$this->assertEquals($inNumber, $this->phoneUtil->parse("9876543210", RegionCode::SG));
 	}
 
 	public function testIsAlphaNumber() {

@@ -100,6 +100,10 @@ return array (
       'format' => '$1 $2 $3 $4',
       'leadingDigitsPatterns' =>
       array (
+        0 => '
+            [568]|
+            [79][0-8]
+          ',
       ),
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',

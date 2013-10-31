@@ -2,26 +2,21 @@
 return array (
   'generalDesc' =>
   array (
-    'NationalNumberPattern' => '[29]\\d{8}',
-    'PossibleNumberPattern' => '\\d{9}',
+    'NationalNumberPattern' => '',
+    'PossibleNumberPattern' => '',
     'ExampleNumber' => '',
   ),
   'fixedLine' =>
   array (
-    'NationalNumberPattern' => '
-          2\\d(?:
-            [26-9]\\d|
-            \\d[26-9]
-          )\\d{5}
-        ',
-    'PossibleNumberPattern' => '\\d{9}',
-    'ExampleNumber' => '222123456',
+    'NationalNumberPattern' => '',
+    'PossibleNumberPattern' => '',
+    'ExampleNumber' => '',
   ),
   'mobile' =>
   array (
-    'NationalNumberPattern' => '9[1-49]\\d{7}',
-    'PossibleNumberPattern' => '\\d{9}',
-    'ExampleNumber' => '923123456',
+    'NationalNumberPattern' => '',
+    'PossibleNumberPattern' => '',
+    'ExampleNumber' => '',
   ),
   'tollFree' =>
   array (
@@ -47,22 +42,12 @@ return array (
     'PossibleNumberPattern' => 'NA',
     'ExampleNumber' => '',
   ),
-  'id' => 'AO',
-  'countryCode' => 244,
-  'internationalPrefix' => '00',
-  'sameMobileAndFixedLinePattern' => false,
+  'id' => 'FR',
+  'countryCode' => 33,
+  'internationalPrefix' => '',
+  'sameMobileAndFixedLinePattern' => true,
   'numberFormat' =>
   array (
-    0 =>
-    array (
-      'pattern' => '(\\d{3})(\\d{3})(\\d{3})',
-      'format' => '$1 $2 $3',
-      'leadingDigitsPatterns' =>
-      array (
-      ),
-      'nationalPrefixFormattingRule' => '',
-      'domesticCarrierCodeFormattingRule' => '',
-    ),
   ),
   'intlNumberFormat' =>
   array (
