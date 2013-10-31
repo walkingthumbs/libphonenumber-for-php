@@ -1,12 +1,12 @@
 <?php
 return array (
-  'generalDesc' => 
+  'generalDesc' =>
   array (
     'NationalNumberPattern' => '[2568]\\d{7}',
     'PossibleNumberPattern' => '\\d{8}',
     'ExampleNumber' => '',
   ),
-  'fixedLine' => 
+  'fixedLine' =>
   array (
     'NationalNumberPattern' => '
           2(?:
@@ -18,7 +18,7 @@ return array (
     'PossibleNumberPattern' => '\\d{8}',
     'ExampleNumber' => '20012345',
   ),
-  'mobile' => 
+  'mobile' =>
   array (
     'NationalNumberPattern' => '
           (?:
@@ -29,25 +29,25 @@ return array (
     'PossibleNumberPattern' => '\\d{8}',
     'ExampleNumber' => '57123456',
   ),
-  'tollFree' => 
+  'tollFree' =>
   array (
     'NationalNumberPattern' => '80\\d{6}',
     'PossibleNumberPattern' => '\\d{8}',
     'ExampleNumber' => '80123456',
   ),
-  'premiumRate' => 
+  'premiumRate' =>
   array (
     'NationalNumberPattern' => '8[1-689]\\d{6}',
     'PossibleNumberPattern' => '\\d{8}',
     'ExampleNumber' => '88123456',
   ),
-  'sharedCost' => 
+  'sharedCost' =>
   array (
     'NationalNumberPattern' => '87\\d{6}',
     'PossibleNumberPattern' => '\\d{8}',
     'ExampleNumber' => '87123456',
   ),
-  'noInternationalDialling' => 
+  'noInternationalDialling' =>
   array (
     'NationalNumberPattern' => 'NA',
     'PossibleNumberPattern' => 'NA',
@@ -57,10 +57,10 @@ return array (
   'countryCode' => 350,
   'internationalPrefix' => '00',
   'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' => 
+  'numberFormat' =>
   array (
   ),
-  'intlNumberFormat' => 
+  'intlNumberFormat' =>
   array (
   ),
   'mainCountryForCode' => NULL,

@@ -1,42 +1,42 @@
 <?php
 return array (
-  'generalDesc' => 
+  'generalDesc' =>
   array (
     'NationalNumberPattern' => '(242|8(00|66|77|88)|900)\\d{7}',
     'PossibleNumberPattern' => '\\d{7,10}',
     'ExampleNumber' => '',
   ),
-  'fixedLine' => 
+  'fixedLine' =>
   array (
     'NationalNumberPattern' => '242(?:3(?:02|[236][1-9]|4[0-24-9]|5[0-68]|7[3-57]|9[2-5])|4(?:2[237]|51|64|77)|502|636|702)\\d{4}',
     'PossibleNumberPattern' => '\\d{7,10}',
     'ExampleNumber' => '',
   ),
-  'mobile' => 
+  'mobile' =>
   array (
     'NationalNumberPattern' => '242(357|359|457|557)\\d{4}',
     'PossibleNumberPattern' => '\\d{10}',
     'ExampleNumber' => '',
   ),
-  'tollFree' => 
+  'tollFree' =>
   array (
     'NationalNumberPattern' => '8(00|66|77|88)\\d{7}',
     'PossibleNumberPattern' => '\\d{10}',
     'ExampleNumber' => '',
   ),
-  'premiumRate' => 
+  'premiumRate' =>
   array (
     'NationalNumberPattern' => '900\\d{7}',
     'PossibleNumberPattern' => '\\d{10}',
     'ExampleNumber' => '',
   ),
-  'sharedCost' => 
+  'sharedCost' =>
   array (
     'NationalNumberPattern' => 'NA',
     'PossibleNumberPattern' => 'NA',
     'ExampleNumber' => '',
   ),
-  'noInternationalDialling' => 
+  'noInternationalDialling' =>
   array (
     'NationalNumberPattern' => 'NA',
     'PossibleNumberPattern' => 'NA',
@@ -48,10 +48,10 @@ return array (
   'nationalPrefix' => '1',
   'nationalPrefixForParsing' => '1',
   'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' => 
+  'numberFormat' =>
   array (
   ),
-  'intlNumberFormat' => 
+  'intlNumberFormat' =>
   array (
   ),
   'mainCountryForCode' => NULL,

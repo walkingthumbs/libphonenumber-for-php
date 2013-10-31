@@ -145,7 +145,7 @@ class BuildMetadataFromXml {
 	 * @param DOMElement $element
 	 * @param string $nationalPrefix
 	 * @param string $nationalPrefixFormattingRule
-	 * @return PhoneMetadata 
+	 * @return PhoneMetadata
 	 */
 	private static function loadTerritoryTagMetadata($regionCode, \DOMElement $element, $nationalPrefix, $nationalPrefixFormattingRule) {
 		$metadata = new PhoneMetadata();
@@ -321,7 +321,7 @@ class BuildMetadataFromXml {
 		  $metadata->setPager(self::processPhoneNumberDescElement($generalDesc, $element, self::PAGER));
 		  $metadata->setUan(self::processPhoneNumberDescElement($generalDesc, $element, self::UAN));
 		  $metadata->setEmergency(self::processPhoneNumberDescElement($generalDesc, $element, self::EMERGENCY));
-		 * 
+		 *
 		 */
 		$metadata->setNoInternationalDialling(self::processPhoneNumberDescElement($generalDesc, $element, self::NO_INTERNATIONAL_DIALLING));
 		$metadata->setSameMobileAndFixedLinePattern(

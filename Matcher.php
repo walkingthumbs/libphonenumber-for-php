@@ -69,8 +69,8 @@ class Matcher
 
     /**
      * @param int $group
-     * 
-     * @return string 
+     *
+     * @return string
      */
     public function group($group = null)
     {
@@ -89,8 +89,8 @@ class Matcher
 
     /**
      * @param string $replacement
-     * 
-     * @return string 
+     *
+     * @return string
      */
     public function replaceFirst($replacement)
     {
@@ -99,8 +99,8 @@ class Matcher
 
     /**
      * @param string $replacement
-     * 
-     * @return string 
+     *
+     * @return string
      */
     public function replaceAll($replacement)
     {
@@ -109,8 +109,8 @@ class Matcher
 
     /**
      * @param string $input
-     * 
-     * @return Matcher 
+     *
+     * @return Matcher
      */
     public function reset($input = "")
     {

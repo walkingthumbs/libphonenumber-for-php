@@ -1,12 +1,12 @@
 <?php
 return array (
-  'generalDesc' => 
+  'generalDesc' =>
   array (
     'NationalNumberPattern' => '[1-9]\\d{9,10}',
     'PossibleNumberPattern' => '\\d{7,11}',
     'ExampleNumber' => '',
   ),
-  'fixedLine' => 
+  'fixedLine' =>
   array (
     'NationalNumberPattern' => '
           (?:
@@ -78,7 +78,7 @@ return array (
     'PossibleNumberPattern' => '\\d{7,10}',
     'ExampleNumber' => '2221234567',
   ),
-  'mobile' => 
+  'mobile' =>
   array (
     'NationalNumberPattern' => '
           1(?:
@@ -152,25 +152,25 @@ return array (
     'PossibleNumberPattern' => '\\d{11}',
     'ExampleNumber' => '12221234567',
   ),
-  'tollFree' => 
+  'tollFree' =>
   array (
     'NationalNumberPattern' => '800\\d{7}',
     'PossibleNumberPattern' => '\\d{10}',
     'ExampleNumber' => '8001234567',
   ),
-  'premiumRate' => 
+  'premiumRate' =>
   array (
     'NationalNumberPattern' => '900\\d{7}',
     'PossibleNumberPattern' => '\\d{10}',
     'ExampleNumber' => '9001234567',
   ),
-  'sharedCost' => 
+  'sharedCost' =>
   array (
     'NationalNumberPattern' => 'NA',
     'PossibleNumberPattern' => 'NA',
     'ExampleNumber' => '',
   ),
-  'noInternationalDialling' => 
+  'noInternationalDialling' =>
   array (
     'NationalNumberPattern' => 'NA',
     'PossibleNumberPattern' => 'NA',
@@ -183,13 +183,13 @@ return array (
   'nationalPrefixForParsing' => '0[12]|04[45](\\d{10})',
   'nationalPrefixTransformRule' => '1$1',
   'sameMobileAndFixedLinePattern' => false,
-  'numberFormat' => 
+  'numberFormat' =>
   array (
-    0 => 
+    0 =>
     array (
       'pattern' => '([358]\\d)(\\d{4})(\\d{4})',
       'format' => '$1 $2 $3',
-      'leadingDigitsPatterns' => 
+      'leadingDigitsPatterns' =>
       array (
         0 => '
             33|
@@ -200,11 +200,11 @@ return array (
       'nationalPrefixFormattingRule' => '01 $1',
       'domesticCarrierCodeFormattingRule' => '',
     ),
-    1 => 
+    1 =>
     array (
       'pattern' => '(\\d{3})(\\d{3})(\\d{4})',
       'format' => '$1 $2 $3',
-      'leadingDigitsPatterns' => 
+      'leadingDigitsPatterns' =>
       array (
         0 => '
             [2467]|
@@ -217,11 +217,11 @@ return array (
       'nationalPrefixFormattingRule' => '01 $1',
       'domesticCarrierCodeFormattingRule' => '',
     ),
-    2 => 
+    2 =>
     array (
       'pattern' => '(1)([358]\\d)(\\d{4})(\\d{4})',
       'format' => '044 $2 $3 $4',
-      'leadingDigitsPatterns' => 
+      'leadingDigitsPatterns' =>
       array (
         0 => '
             1(?:
@@ -234,11 +234,11 @@ return array (
       'nationalPrefixFormattingRule' => '$1',
       'domesticCarrierCodeFormattingRule' => '',
     ),
-    3 => 
+    3 =>
     array (
       'pattern' => '(1)(\\d{3})(\\d{3})(\\d{4})',
       'format' => '044 $2 $3 $4',
-      'leadingDigitsPatterns' => 
+      'leadingDigitsPatterns' =>
       array (
         0 => '
             1(?:
@@ -254,13 +254,13 @@ return array (
       'domesticCarrierCodeFormattingRule' => '',
     ),
   ),
-  'intlNumberFormat' => 
+  'intlNumberFormat' =>
   array (
-    0 => 
+    0 =>
     array (
       'pattern' => '([358]\\d)(\\d{4})(\\d{4})',
       'format' => '$1 $2 $3',
-      'leadingDigitsPatterns' => 
+      'leadingDigitsPatterns' =>
       array (
         0 => '
             33|
@@ -269,11 +269,11 @@ return array (
           ',
       ),
     ),
-    1 => 
+    1 =>
     array (
       'pattern' => '(\\d{3})(\\d{3})(\\d{4})',
       'format' => '$1 $2 $3',
-      'leadingDigitsPatterns' => 
+      'leadingDigitsPatterns' =>
       array (
         0 => '
             [2467]|
@@ -284,11 +284,11 @@ return array (
           ',
       ),
     ),
-    2 => 
+    2 =>
     array (
       'pattern' => '(1)([358]\\d)(\\d{4})(\\d{4})',
       'format' => '$1 $2 $3 $4',
-      'leadingDigitsPatterns' => 
+      'leadingDigitsPatterns' =>
       array (
         0 => '
             1(?:
@@ -299,11 +299,11 @@ return array (
           ',
       ),
     ),
-    3 => 
+    3 =>
     array (
       'pattern' => '(1)(\\d{3})(\\d{3})(\\d{4})',
       'format' => '$1 $2 $3 $4',
-      'leadingDigitsPatterns' => 
+      'leadingDigitsPatterns' =>
       array (
         0 => '
             1(?:

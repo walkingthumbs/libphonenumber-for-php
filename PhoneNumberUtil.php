@@ -142,7 +142,7 @@ class PhoneNumberUtil {
 	 * This class implements a singleton, so the only constructor is private.
 	 */
 	private function __construct() {
-		
+
 	}
 
 	private function init($filePrefix) {
@@ -1519,7 +1519,7 @@ class PhoneNumberUtil {
 	/**
 	 *
 	 * @param string $regionCode
-	 * @return PhoneMetadata 
+	 * @return PhoneMetadata
 	 */
 	public function getMetadataForRegion($regionCode) {
 		if (!$this->isValidRegionCode($regionCode)) {
@@ -1892,7 +1892,7 @@ class PhoneNumberUtil {
 		$formattingPattern = $this->chooseFormattingPatternForNumber($availableFormats, $number);
 		return ($formattingPattern == null) ? $number : $this->formatNsnUsingPattern($number, $formattingPattern, $numberFormat, $carrierCode);
 	}
-	
+
 	private function chooseFormattingPatternForNumber(array $availableFormats, $nationalNumber) {
 		foreach ($availableFormats as $numFormat) {
 			/** @var NumberFormat $numFormat  */

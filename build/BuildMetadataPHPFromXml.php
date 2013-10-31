@@ -12,7 +12,7 @@ class BuildMetadataPHPFromXml {
 	const HELP_MESSAGE = <<<'EOT'
   Usage:
   BuildMetadataProtoFromXml <inputFile> <outputDir> <forTesting> [<liteBuild>]
-  
+
   where:
     inputFile    The input file containing phone number metadata in XML format.
     outputDir    The output source directory to store phone number metadata in proto
@@ -22,13 +22,13 @@ class BuildMetadataPHPFromXml {
     liteBuild    Whether to generate the lite-version of the metadata (default:
                  false). When set to true certain metadata will be omitted.
                  At this moment, example numbers information is omitted.
-  
+
   Metadata will be stored in:
     <outputDir> META_DATA_FILE_PREFIX . "_*
   Mapping file will be stored in:
     <outputDir>/ PACKAGE_NAME . "/"
   COUNTRY_CODE_TO_REGION_CODE_MAP_CLASS_NAME . ".java
-  
+
   Example command line invocation:
   BuildMetadataProtoFromXml PhoneNumberMetadata.xml src false false
 EOT;

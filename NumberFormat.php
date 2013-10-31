@@ -14,7 +14,7 @@ class NumberFormat
     private $domesticCarrierCodeFormattingRule = null;
 
     /**
-     * @return boolean 
+     * @return boolean
      */
     public function hasPattern()
     {
@@ -22,7 +22,7 @@ class NumberFormat
     }
 
     /**
-     * @return string 
+     * @return string
      */
     public function getPattern()
     {
@@ -32,7 +32,7 @@ class NumberFormat
     /**
      * @param string $value
      *
-     * @return NumberFormat 
+     * @return NumberFormat
      */
     public function setPattern($value)
     {
@@ -59,8 +59,8 @@ class NumberFormat
 
     /**
      * @param string $value
-     * 
-     * @return NumberFormat 
+     *
+     * @return NumberFormat
      */
     public function setFormat($value)
     {
@@ -87,8 +87,8 @@ class NumberFormat
 
     /**
      * @param int $index
-     * 
-     * @return string 
+     *
+     * @return string
      */
     public function getLeadingDigitsPattern($index)
     {
@@ -97,8 +97,8 @@ class NumberFormat
 
     /**
      * @param string $value
-     * 
-     * @return NumberFormat 
+     *
+     * @return NumberFormat
      */
     public function addLeadingDigitsPattern($value)
     {
@@ -125,8 +125,8 @@ class NumberFormat
 
     /**
      * @param string $value
-     * 
-     * @return NumberFormat 
+     *
+     * @return NumberFormat
      */
     public function setNationalPrefixFormattingRule($value)
     {
@@ -136,7 +136,7 @@ class NumberFormat
     }
 
     /**
-     * @return NumberFormat 
+     * @return NumberFormat
      */
     public function clearNationalPrefixFormattingRule()
     {
@@ -178,8 +178,8 @@ class NumberFormat
 
     /**
      * @param string $value
-     * 
-     * @return NumberFormat 
+     *
+     * @return NumberFormat
      */
     public function setDomesticCarrierCodeFormattingRule($value)
     {
@@ -190,7 +190,7 @@ class NumberFormat
 
     /**
      * @param NumberFormat $other
-     * 
+     *
      * @return NumberFormat
      */
     public function mergeFrom(NumberFormat $other)
@@ -217,7 +217,7 @@ class NumberFormat
     }
 
     /**
-     * @return array 
+     * @return array
      */
     public function toArray()
     {
@@ -240,7 +240,7 @@ class NumberFormat
     }
 
     /**
-     * @param array $input 
+     * @param array $input
      */
     public function fromArray(array $input)
     {

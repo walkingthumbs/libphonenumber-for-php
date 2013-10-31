@@ -448,7 +448,7 @@ class PhoneMetadata {
 
 	/**
 	 *
-	 * @var NumberFormat 
+	 * @var NumberFormat
 	 */
 	private $intlNumberFormat = array();
 
@@ -654,7 +654,7 @@ class PhoneMetadata {
 		  setEmergency(desc);
 		  }
 		 */
-		
+
 		if (isset($input['noInternationalDialling'])) {
 			$desc = new PhoneNumberDesc();
 			$this->setNoInternationalDialling($desc->fromArray($input['noInternationalDialling']));
@@ -704,7 +704,7 @@ class PhoneMetadata {
 
 		/*
 		  setMainCountryForCode(objectInput.readBoolean());
-		 * 
+		 *
 		 */
 		$this->setMainCountryForCode($input['mainCountryForCode']);
 
