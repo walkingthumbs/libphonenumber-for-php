@@ -440,8 +440,9 @@ class PhoneNumberUtil {
 		$normalizedNumber = "";
 		$numberAsArray = preg_split('/(?<!^)(?!$)/u', $number);
 		foreach ($numberAsArray as $character) {
-			if (isset($normalizationReplacements[mb_strtoupper($character, 'UTF-8')])) {
-				$normalizedNumber .= $normalizationReplacements[mb_strtoupper($character, 'UTF-8')];
+	        $character = mb_strtoupper($character, 'UTF-8');		
+			if (isset($normalizationReplacements[$character])) {
+				$normalizedNumber .= $normalizationReplacements[$character];
 			} else if (!$removeNonMatches) {
 				$normalizedNumber .= $character;
 			}
